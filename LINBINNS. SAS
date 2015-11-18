@@ -1,0 +1,22 @@
+data LB; 
+GEN AMB VAR; 
+
+proc means mean; 
+Class GEN; 
+var VAR; 
+ODS output summary=MedGen; 
+Run;
+
+proc means mean; 
+Class Amb; 
+var VAR; 
+ODS output summary=Medamb; 
+Run;
+
+
+proc means max; 
+Class Gen Amb; 
+var VAR; 
+ODS output summary=MaxGenAmb; 
+Run;
+
